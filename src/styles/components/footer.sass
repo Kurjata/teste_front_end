@@ -1,0 +1,198 @@
+@use '../variables'
+@use '../mixins'
+
+#footer
+  margin-top: 7.3125rem
+  width: 100%
+  
+  .footer-main
+    width: 100%
+    background: #2A2A2A
+    color: #FFFFFF
+    padding: variables.$padding-left-and-right-screen-xl
+    display: flex
+    justify-content: space-between
+
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+      flex-wrap: wrap
+      justify-content: center
+      
+
+    .information
+      display: flex
+      flex-wrap: wrap
+
+      @include mixins.screen-max(variables.$screen-m)
+        width: 100%
+        justify-content: space-between
+
+      @include mixins.screen-max(variables.$screen-s)
+        justify-content: center
+
+
+      h3
+          font-weight: 700
+          font-size: 0.8125rem
+          line-height: 1.25rem
+          margin-bottom: 1.5rem
+          margin-top: 3.6875rem
+
+          @include mixins.screen-max(350px)
+            margin-top: 1rem
+
+      
+      li
+          list-style: none
+          font-weight: 300
+          font-size: 0.75rem
+          line-height: 2rem
+
+          @include mixins.screen-max(variables.$screen-m)
+            line-height: 1rem          
+
+      .about
+        margin-right: 5.8125rem
+
+        @include mixins.screen-max(variables.$screen-l)
+          margin-right: 1rem
+        
+        @include mixins.screen-max(350px)
+          text-align: center
+
+        
+        ul
+          height: 8rem
+          margin-bottom: 1.875rem
+
+          @include mixins.screen-max(350px)
+            height: fit-content
+
+        div
+          width: 90%
+          display: flex
+          justify-content: space-between
+          align-items: center
+      
+
+      .useful-information
+        margin-right: 3rem
+
+        @include mixins.screen-max(variables.$screen-l)
+          margin-right: 1rem
+        
+        @include mixins.screen-max(350px)
+          text-align: center
+
+      .payment-methods
+        margin-right: 3rem
+
+        @include mixins.screen-max(variables.$screen-l)
+          margin-right: 1rem
+        
+        @include mixins.screen-max(350px)
+          text-align: center
+
+        div
+          display: grid
+          grid-template-columns: repeat(3, 1fr)
+          justify-items: center
+          align-items: center
+          gap: 1rem
+
+          span
+            width: fit-content
+            
+
+    .register-email
+      width: 23.75rem
+      height: 16.25rem
+      display: flex
+      flex-direction: column
+      justify-self: end
+      justify-content: space-between
+      padding: 30px
+      margin-top: 2rem
+      margin-bottom: 2rem
+      background-color: #FFFFFF
+      border-radius: 0.625rem
+
+      h3
+        font-weight: 300
+        font-size: 1.125rem
+        color: #3F3F40
+        line-height: 1.625rem
+        margin: 0px
+
+        b
+          font-weight: 700
+          font-size: 1.3125rem
+
+      p
+        font-weight: 300
+        font-size: 0.75rem
+        line-height: 1.1875rem
+        text-align: center
+        color: #3F3F40
+        margin-top: 0.9rem
+        margin-bottom: 1.9375rem
+
+      div
+        width: 100%
+        display: flex
+        justify-content: start
+        gap: 9px
+
+        input
+          background: #FFFFFF
+          border: 1px solid #2A2A2A
+          border-radius: 4px
+          height: 2.8rem
+          padding-left: 1.5rem
+          width: inherit
+          font-weight: 400
+          font-size: 0.75rem
+          line-height: 1.25rem
+          color: #C0C0C0
+
+        button
+          min-width: 3.875rem
+          height: 2.8125rem
+          background-color: variables.$primary-color
+          color: #FFFFFF
+          font-weight: 700
+          font-size: 0.875rem
+          line-height: 1.25rem
+          text-align: center
+          border-radius: 4px
+          border: 0 
+
+  .footer-bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    background: #2A2A2A
+    border-top: 1px solid #FFFFFF
+    padding: 1.375rem 5.375rem
+
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+
+    p
+      font-weight: 400
+      font-size: 0.625rem
+      line-height: 0.8125rem
+      color: #FFFFFF
+      text-transform: uppercase
+    
+    :last-child
+      display: flex
+      gap: 2rem
+

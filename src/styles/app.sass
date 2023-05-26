@@ -1,0 +1,179 @@
+@use './variables'
+@use './mixins'
+
+  
+#main
+  background: #FFFFFF
+
+  .banner
+    height: 24.6875rem
+    display: flex
+    flex-direction: column
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.247) 0%, #000000e7 100%), url('../assets/Banner.svg')
+    mix-blend-mode: normal
+    border-radius: 0px
+    padding: 3.25rem 5.375rem 3.125rem 5.375rem
+    margin-bottom: 2.125rem
+    
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+
+    @include mixins.screen-max(500px)
+      justify-content: center
+      align-items: center
+      text-align: center
+
+    p:first-child
+      color: #FFFFFF
+      font-weight: 600
+      font-size: 3rem
+      line-height: 4.5rem
+      width: 51rem
+
+      @include mixins.screen-max(variables.$screen-m)
+        width: fit-content
+
+      @include mixins.screen-max(500px)
+        font-size: 2rem
+        line-height: 3rem
+        
+
+    p:nth-child(2)
+      margin-bottom: 2.1875rem
+      font-size: 2.25rem
+      font-weight: 600
+      line-height: 3.375rem
+      color: #FFFFFF
+
+      @include mixins.screen-max(500px)
+        font-size: 1rem
+        margin-bottom: 2rem
+
+    
+    button
+      height: 3.75rem
+      width: 14.1875rem
+      background-color: variables.$primary-color
+      border: 0
+      border-radius: 0.3125rem
+      font-size: 1.125rem
+      color: #FFFFFF
+      line-height: 1.6875rem
+      font-weight: 600
+    
+  .categories
+    display: flex
+    justify-content: space-between
+    padding: variables.$padding-left-and-right-screen-xl
+
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+      justify-content: center
+      flex-wrap: wrap
+      gap: 2rem
+    
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+    
+
+    .category-card:first-child
+      background: #FFFFFF
+
+    .category-card:first-child p
+      color: variables.$primary-color
+
+    .category-card
+      width: 8rem
+      height: 8rem
+      display: flex
+      justify-content: center
+      align-items: center
+      background: #F4F4F4
+      box-shadow: 0px 4px 11px 0px #00000021
+      border-radius: 0.625rem
+      position: relative
+      margin-bottom: 5.3125rem
+
+      @include mixins.screen-max(variables.$screen-m)
+        width: 6rem
+
+      img
+        width: 3.8125rem
+        height: 3.8125rem
+
+      p
+        font-weight: 500
+        font-size: 1rem
+        line-height: 1.5rem
+        text-align: center
+        color: #4E4E4E
+
+        position: absolute
+        bottom: -47px
+        min-width: 150px
+
+  .announcement
+    padding: variables.$padding-left-and-right-screen-xl
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-items: center
+    gap: 1rem
+    margin-bottom: 3.75rem
+
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+     
+    @include mixins.screen-max(variables.$screen-s)
+      grid-template-columns: 1fr
+
+    @include mixins.screen-max(variables.$screen-xs)
+      grid-template-columns: 1fr
+
+  .brand
+    padding: variables.$padding-left-and-right-screen-xl
+
+    @include mixins.screen-max(variables.$screen-l)
+      padding: variables.$padding-left-and-right-screen-l
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: variables.$padding-left-and-right-screen-m
+
+
+    h2
+      color: variables.$primary-color
+      font-weight: 700
+      font-size: 1.875rem
+      line-height: 2.8125rem
+      text-align: center
+      margin-bottom: 3.75rem
+    
+    .container-brands
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      margin-bottom: 5.375rem
+
+      @include mixins.screen-max(variables.$screen-l)
+        justify-content: center
+        gap: 1rem
+
+      div
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 13.1875rem
+        width: 13.1875rem
+        background: #FFFFFF
+        box-shadow: 0px 7px 20px rgba(124, 118, 118, 0.705)
+        border-radius: 50%
+
+        @include mixins.screen-max(variables.$screen-xs)
+          width: 10rem
+          height: 10rem
+      

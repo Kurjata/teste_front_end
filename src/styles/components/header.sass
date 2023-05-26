@@ -1,0 +1,253 @@
+@use '../variables'
+@use '../mixins'
+
+#header
+  width: 100%
+  padding: variables.$padding-left-and-right-screen-xl
+  background-color: #fff
+
+  @include mixins.screen-max(variables.$screen-l)
+    padding: variables.$padding-left-and-right-screen-l
+  @include mixins.screen-max(variables.$screen-m)
+    padding: variables.$padding-left-and-right-screen-m
+
+
+  .header-top
+    height: 2rem
+    display: flex
+    justify-content: center
+    gap: 7.4375rem
+    border-bottom: 1px solid #F0F0F0
+    align-items: center
+
+    @include mixins.screen-max(variables.$screen-m)
+      gap: 0
+      justify-content: space-evenly
+    
+
+    :first-child p
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+    div
+      display: flex
+      align-items: center
+
+      img
+        height: 1.25rem
+        width: 1.25rem
+        margin-right: 0.5625rem
+        
+        @include mixins.screen-max(550px)
+          margin-right: 10px
+
+        @include mixins.screen-max(320px)
+          margin-right: 0px
+          height: 1rem
+          width: 1rem
+
+
+      p
+        color: variables.$second-color
+        font-weight: 500
+        font-size: 0.75rem
+        line-height: 1.125rem
+        text-align: center
+
+        @include mixins.screen-max(550px)
+          line-height: 1rem
+          font-size: 50%
+
+        b
+          color: variables.$primary-color
+          font-weight: 600
+  
+  .header-bottom
+    display: grid
+    align-items: center
+    grid-template-areas: "logo search icons" "navbar navbar navbar"
+    grid-template-columns: 1fr 3fr 1fr
+    grid-column-gap: 1rem
+    padding-top: 9px
+    
+
+    @include mixins.screen-max(variables.$screen-m)
+      padding: 9px 1rem 0 1rem
+      grid-template-areas: "navbar logo icons" "search search search"
+      grid-template-columns: 3rem 10fr 1fr
+
+    @include mixins.screen-max(variables.$screen-s)
+      padding-left: 0
+      padding-right: 0 
+
+    .logo
+      grid-area: logo
+      width: fit-content
+      padding-left: 3.5rem
+
+      @include mixins.screen-max(variables.$screen-m)
+        display: flex
+        align-items: center
+        padding-left: 0
+
+      @include mixins.screen-max(variables.$screen-s)
+        display: none
+
+      .logo img
+        height: 3.165rem
+        width: 8.6875rem
+
+    .search-area
+      display: flex
+      align-items: center
+      position: relative
+      width: 100%
+      justify-content: center
+      grid-area: search
+
+      @include mixins.screen-max(variables.$screen-m)
+        margin-top: 10px
+
+      
+      input
+        height: 3rem
+        width: 100%
+        padding-left: 1.5rem
+        padding-right: 2rem
+        outline: none
+        border: 0
+        border-radius: 0.625rem
+        background: #F7F5F2
+        font-size: 0.875rem        
+        line-height: 1.3125rem
+        color: #514E4E
+        font-weight: 500
+        font-style: normal
+
+      
+      span
+        height: 1.75rem
+        position: absolute
+        right: calc( 0px + 2% )
+      
+    .group-icons-area
+      display: flex
+      align-items: center
+      justify-content: space-evenly
+      grid-area: icons
+      padding-right: 3.5rem
+
+      @include mixins.screen-max(variables.$screen-l)
+        gap: 1rem
+
+      @include mixins.screen-max(variables.$screen-m)
+        padding-right: 0
+
+      span:first-child 
+        height: 1.5rem
+        width: 1.5rem
+
+      :first-child img
+        height: 1.5rem
+        width: 1.5rem
+
+
+      span     
+        height: 2rem
+        width: 2rem   
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .navbar
+        width: 100%
+        height: 2.5rem
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        padding: 0 3.5rem
+        background: #FFFFFF
+        box-shadow: 0px 8px 16px rgba(57, 48, 19, 0.12)
+        border-radius: 0px
+        grid-area: navbar
+        border-top: 1px solid #F0F0F0
+        
+        @include mixins.screen-max(variables.$screen-m)
+          width: 100%
+          height: 100%
+          background-image: url('../../assets/menu.png')
+          background-repeat: no-repeat
+          cursor: pointer
+          fill: variables.$primary-color
+          box-shadow: 0px 0px 0px 0px
+          border: 0
+          padding: 0
+          position: relative
+      
+        @include mixins.screen-max(variables.$screen-s)
+          background-size: contain
+          height: 2.5rem  
+    
+        .close-menu
+          display: none
+
+        ul
+          width: 100%
+          display: flex
+          align-items: center
+          justify-content: space-between
+
+          @include mixins.screen-max(variables.$screen-m)
+            display: none
+
+          :nth-child(6)
+            color: variables.$primary-color
+
+          :last-child
+            display: flex
+            align-items: center
+            gap: 0.75rem
+
+          li
+            list-style: none
+            font-style: normal
+            font-weight: 600
+            font-size: 0.75rem
+            line-height: 1.125rem
+            text-align: center
+            color: variables.$second-color
+
+    .navbar-open
+      width: 100vw
+      height: 100vh
+      position: absolute
+      top: 0
+      left: 0
+      background-color: #eeeeee
+      z-index: 10
+      display: flex
+      justify-content: center
+      align-items: center
+      overflow: hidden
+
+      .close-menu
+
+        img
+          height: 2rem
+          width: 2rem
+          position: absolute
+          top: 1rem
+          right: 1rem
+
+        
+      li
+        line-height: 2rem
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 0.3rem
+        cursor: pointer
+      
+      li:hover
+        color: variables.$primary-color
+

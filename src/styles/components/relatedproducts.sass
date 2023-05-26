@@ -1,0 +1,97 @@
+@use '../variables'
+@use '../mixins'
+
+#related-products
+  padding: variables.$padding-left-and-right-screen-xl
+  margin-bottom: 3.25rem
+
+  @include mixins.screen-max(variables.$screen-l)
+    padding: variables.$padding-left-and-right-screen-l
+
+  @include mixins.screen-max(variables.$screen-m)
+    padding: variables.$padding-left-and-right-screen-m
+
+  .title
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+
+    h1
+      display: flex
+      align-items: center
+      color: variables.$primary-color
+      font-weight: 700
+      font-size: 1.875rem
+      line-height: 2.8125rem
+      margin-bottom: 4px
+    
+      @include mixins.screen-max(variables.$screen-l)
+        width: 100%
+
+      &:after
+        content: ""
+        height: 0px
+        width: 22.5rem
+        display: inline-block
+        border: 1px solid #DEDEDE
+        margin-left: 2.125rem
+      
+        @include mixins.screen-max(variables.$screen-l)
+          width: 100%
+        
+      
+      &:before
+        content: ""
+        height: 0px
+        width: 22.5rem
+        display: inline-block
+        border: 1px solid #DEDEDE
+        margin-right: 2.125rem
+      
+        @include mixins.screen-max(variables.$screen-l)
+          width: 100%
+      
+  .see-all
+    text-align: center
+    font-weight: 700
+    font-size: 0.9rem
+    line-height: 1.375rem
+    color: #3F3F40
+    
+  .related-categories
+    margin-bottom: 1.25rem
+
+    ul
+      display: grid
+      align-items: center
+      grid-template-columns: repeat(6, 1fr)
+
+      @include mixins.screen-max(variables.$screen-m)
+        grid-template-columns: repeat(3, 1fr)
+      
+      @include mixins.screen-max(350px)
+        grid-template-columns: repeat(2, 1fr)
+
+
+      li:first-child
+        color: variables.$primary-color
+        font-weight: 700
+      
+
+      li
+        list-style: none
+        background: #FFFFFF
+        border: 1px solid #BDBDBD
+        text-align: center
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1rem
+        color: #3B3B3B
+        padding: 12px 0px
+
+  
+    
+
+
+

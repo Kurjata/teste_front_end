@@ -1,0 +1,89 @@
+@use '../variables'
+@use '../mixins'
+
+.modal-overlay 
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.7)
+  position: fixed
+  top: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 1
+  visibility: visible
+
+  .modal 
+    background: #FFFFFF
+    border-radius: 0.25rem
+    padding: 3.5rem
+    padding-bottom: 3.125rem
+    display: flex
+    max-width: 40rem
+    width: 90vw
+    justify-content: space-between
+    position: relative
+
+    @include mixins.screen-max(variables.$screen-m)
+      flex-wrap: wrap
+      padding: 1rem
+
+    
+  
+    img
+      width: fit-content
+
+    .info
+      display: flex
+      flex-direction: column
+      padding-top: 1rem
+
+      h1
+        font-weight: 400
+        font-size: 1.25rem
+        line-height: 100%
+        letter-spacing: 0.05em
+        color: #041E50
+        margin-bottom: 1.3125rem
+
+      span
+        font-weight: 900
+        font-size: 1.25rem
+        line-height: 100%
+        letter-spacing: 0.05em
+        color: #041E50
+        margin-bottom: 1rem
+      
+      p
+        font-weight: 400
+        font-size: 0.625rem
+        line-height: 150.5%
+        letter-spacing: 0.05em
+        color: #222222
+        margin-bottom: 1.5rem
+
+      a
+        font-weight: 400
+        font-size: 0.75rem
+        line-height: 100%
+        letter-spacing: 0.05em
+        color: #041E50
+        text-decoration: none
+
+      a:hover
+        text-decoration: underline
+
+    .close:hover
+      cursor: pointer
+      
+    .close
+      position: absolute
+      right: 2.5rem
+      top: 1.5rem
+
+
+
+      img
+        height: 1.5rem
+        width: 1.5rem
+    
